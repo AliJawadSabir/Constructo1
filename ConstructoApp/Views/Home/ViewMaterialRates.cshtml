@@ -1,0 +1,60 @@
+﻿@model IList<ConstructoApp.MaterialRate>
+@{
+    ViewBag.Title = "ViewMaterialRates";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+    <div class="panel-heading" style="background-color:red">Low quality Material Rates</div>
+            <div class="panel panel-info">
+      <div class="panel-heading" style="border-color:#0e0303">Cement: @Model[0].cement</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading" style="border-color:#0e0303">Sand  : @Model[0].sand</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading" style="border-color:#0e0303">Bricks: @Model[0].bricks</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading" style="border-color:#0e0303">Steel : @Model[0].steel</div>
+                </div>
+    </div>
+        </div>
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+    <div class="panel-heading">Standard quality Material Rates</div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Cement: @Model[1].cement</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Sand  : @Model[1].sand</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Bricks: @Model[1].bricks</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Steel : @Model[1].steel</div>
+                </div>
+    </div>
+        </div>
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="background-color:green">High Quality Material Rates</div>
+    <div class="panel panel-info">
+      <div class="panel-heading">Cement: @Model[2].cement</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Sand  : @Model[2].sand</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Bricks: @Model[2].bricks</div>
+                </div>
+            <div class="panel panel-info">
+      <div class="panel-heading">Steel : @Model[2].steel</div>
+                </div>
+  
+    </div>
+</div>
+    <div class="col-md-1"></div>
+    </div>

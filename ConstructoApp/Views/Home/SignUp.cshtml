@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "SignUp";
+    Layout = null;
+}
+
+<link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+<link href="~/Scripts/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <div class="row">
+       <div class="col-sm-4">
+       </div>
+       <div class="col-sm-4">
+           <br />
+           <br />
+           <br />
+           <h2>Register Here</h2>
+           @{
+
+                if (ViewBag.str1 != "" || ViewBag.str1 != null)
+                {
+                     <a>@ViewBag.str1 </a>
+                }
+            }
+           <br /><br />
+           <form method="post" action="~/Home/SignUp">
+               <input type="text" name="email" id="email" placeholder="enter-email" style="width:100%" required />
+               <br />
+               <br />
+               <input type="text" name="name" id="name" placeholder="enter-Name" style="width:100%" required />
+               <br />
+               <br />
+               <input type="password" name="password" id="password" placeholder="enter-password" style="width:100%" required />
+               <br />
+               <br />
+               <input type="submit" class="btn btn-info" style="width:30%" value="Signup" id="b1" />
+             </form>
+               </div>
+       <div class="col-sm-4"></div>
+       
+   </div>
+

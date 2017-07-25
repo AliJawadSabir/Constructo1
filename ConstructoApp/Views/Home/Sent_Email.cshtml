@@ -1,0 +1,222 @@
+﻿@{
+    ViewBag.Title = "Sent_Email";
+}
+<link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<style>
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    blockquote, q {
+        quotes: none;
+    }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    /* Reset End */
+
+    body {
+        background-image: url(/Content/im/bg.jpg);
+        background-size: cover;
+        font-family: 'Source Sans Pro', sans-serif;
+        position: relative;
+    }
+
+    #loginform {
+        border: none;
+        background-color: #f2f2f2;
+        border-radius: 2px;
+        margin: auto;
+        display: block;
+        height: 430px;
+        margin: 50px auto;
+        width: 356px;
+        padding: 22px;
+    }
+
+        #loginform:before {
+            content: "Contact Us";
+            background-color: #7b537e;
+            background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6+ */
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
+            background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
+            background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
+            background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* IE10+ */
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */
+            border: 1px solid #926995;
+            border-radius: 2px 2px 0 0;
+            color: #fff;
+            display: block;
+            font: 600 16px Source Sans Pro;
+            line-height: 65px;
+            margin: -22px -22px 25px;
+            padding-left: 23px;
+            text-shadow: 1px 1px 1px rgba(53,16,56,0.5);
+        }
+
+    .login-username label, .login-password label {
+        display: none;
+        text-indent: -9999px;
+    }
+
+    .input {
+        background-color: #f0eef0;
+        border: solid 1px #dcdcdc;
+        border-radius: 3px;
+        box-shadow: 0 0 0 1px rgba(255,255,255,0.8);
+        box-sizing: border-box;
+        color: #999999;
+        font-size: 14px;
+        font-weight: 600;
+        height: 50px;
+        line-height: auto;
+        outline: none;
+        padding-left: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+        transition: border 0.3s linear;
+    }
+
+        .input:focus {
+            border: solid 1px #926995;
+            transition: border 0.1s linear;
+        }
+
+    .login-username:after {
+        content: url('http://www.inboundnow.com/wp-content/uploads/2014/07/user.png');
+        width: 15px;
+        height: 15px;
+        color: #828282;
+        position: relative;
+        top: -38px;
+        right: 13px;
+        float: right;
+    }
+
+    .login-password:after {
+        content: url('http://www.inboundnow.com/wp-content/uploads/2014/07/pass.png');
+        width: 15px;
+        height: 17px;
+        color: #828282;
+        position: relative;
+        top: -38px;
+        right: 13px;
+        float: right;
+        overflow: hidden;
+    }
+
+    .login-remember {
+        display: none;
+    }
+
+    .button-primary {
+        background: rgb(120,81,123); /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(120,81,123,1) 0%, rgba(117,79,120,1) 19%, rgba(111,75,114,1) 50%, rgba(109,75,112,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(120,81,123,1)), color-stop(19%,rgba(117,79,120,1)), color-stop(50%,rgba(111,75,114,1)), color-stop(100%,rgba(109,75,112,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(120,81,123,1) 0%,rgba(117,79,120,1) 19%,rgba(111,75,114,1) 50%,rgba(109,75,112,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(120,81,123,1) 0%,rgba(117,79,120,1) 19%,rgba(111,75,114,1) 50%,rgba(109,75,112,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(120,81,123,1) 0%,rgba(117,79,120,1) 19%,rgba(111,75,114,1) 50%,rgba(109,75,112,1) 100%); /* IE10+ */
+        background: linear-gradient(to bottom, rgba(120,81,123,1) 0%,rgba(117,79,120,1) 19%,rgba(111,75,114,1) 50%,rgba(109,75,112,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78517b', endColorstr='#6d4b70',GradientType=0 ); /* IE6-9 */
+        border: 1px solid #67466a;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px Source Sans Pro;
+        height: 40px;
+        margin-top: 14px;
+        text-shadow: 0 0 1px #000;
+        width: 100px;
+        transition: box-shadow 0.3s linear;
+    }
+
+        .button-primary:hover {
+            box-shadow: 0 0 3px 1px #926995;
+            transition: border 0.2s linear,box-shadow 0.2s linear;
+        }
+
+        .button-primary:active {
+            background: rgb(109,75,112); /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(109,75,112,1) 0%, rgba(111,75,114,1) 50%, rgba(117,79,120,1) 81%, rgba(120,81,123,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(109,75,112,1)), color-stop(50%,rgba(111,75,114,1)), color-stop(81%,rgba(117,79,120,1)), color-stop(100%,rgba(120,81,123,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(109,75,112,1) 0%,rgba(111,75,114,1) 50%,rgba(117,79,120,1) 81%,rgba(120,81,123,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(109,75,112,1) 0%,rgba(111,75,114,1) 50%,rgba(117,79,120,1) 81%,rgba(120,81,123,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(109,75,112,1) 0%,rgba(111,75,114,1) 50%,rgba(117,79,120,1) 81%,rgba(120,81,123,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom, rgba(109,75,112,1) 0%,rgba(111,75,114,1) 50%,rgba(117,79,120,1) 81%,rgba(120,81,123,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d4b70', endColorstr='#78517b',GradientType=0 ); /* IE6-9 */
+        }
+
+    .login-forget {
+        color: #999999;
+        font-size: 14px;
+        font-weight: 600;
+        float: right;
+        position: relative;
+        top: -27px;
+        right: 90px;
+        text-decoration: none;
+        transition: color 0.3s linear;
+    }
+
+        .login-forget:hover {
+            color: #67466a;
+        }
+</style>
+<div id="main" class="container">
+    <form name="loginform" id="loginform" action="~/User/Sent_Email" method="post" class="wpl-track-me">
+        <p class="login-username">
+            <label for="user_login">Username</label> <input type="email" name="email" id="user_login" class="input" value="" size="20" placeholder="Email" required>
+        </p>
+        <p class="login-password">
+            <label for="user_pass">Password</label> <input type="text" name="subject" id="subject" class="input" value="" size="20" placeholder="subject" required>
+        </p>
+        <textarea class="form-control" name="message" id="message" rows="7" cols="50" required></textarea>
+        <p class="login-submit">
+            <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Send">   </p>
+     
+    </form>
+
+</div>

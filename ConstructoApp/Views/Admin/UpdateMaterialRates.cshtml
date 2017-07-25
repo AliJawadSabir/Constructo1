@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "UpdateMaterialRates";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+<link href="~/Scripts/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class ="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-6">
+        <form  action="~/Admin/UpdateMaterialRates" method="post">
+                <label style="width:20%">Sand Rate </label><input type="number" min="0" name="sand" value="0" placeholder ="Enter Sand Rate" style="width:70%" />
+                <br /><br />
+                <label style="width:20%">Cement Rate </label><input type="number" min="0" value="0" name="cement"  placeholder="Enter Bricks Rate" style="width:70%"/>
+                <br /><br />
+                <label style="width:20%" >Steel Rate </label><input type="number" min="0" value="0" name="steel"  placeholder="Enter Cement Rate" style="width:70%"/>
+                <br /><br />
+                <label style="width:20%">Bricks Rate </label><input type="number" min="0" value="0" name="bricks"  placeholder="Enter Steel Rate" style="width:70%"/>
+                <br /><br />
+            <div class="radio-inline">
+            <label><input type="radio" name="standard" value="Low" required>Low</label>
+            </div>
+            <div class="radio-inline">
+            <label><input type="radio" name="standard" value="Medimum" required>Medimum</label>
+            </div>
+            <div class="radio-inline">
+            <label><input type="radio" name="standard" value="High" required>High</label>
+            </div>
+            <br />
+            <input type="submit" class="btn btn-success" style="width:30%" value="submit"/>
+            </form>
+        <div class="alert alert-success">
+            @{
+
+               if (ViewBag.str1 != "" || ViewBag.str1 != null)
+               {
+                   <h2>@ViewBag.message </h2>
+               }
+           }
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h3>You can either update All Rates or either update any singal Recods.
+            Leave that field which you don't wanna update.</h3>
+    </div>
+</div>

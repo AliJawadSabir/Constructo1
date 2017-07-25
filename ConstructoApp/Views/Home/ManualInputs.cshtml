@@ -1,0 +1,86 @@
+﻿@model ConstructoApp.Models.Materials
+
+@{
+    ViewBag.Title = "ManualInputs";
+}
+
+
+<link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+<link href="~/Scripts/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-5" id="myDiv">
+        <h3>Enter House Details Here</h3>
+        <form  action="~/Home/CalculateHouse" method="post">
+                <input type="number" min="0" name="RoomCount" placeholder ="Total Number of Rooms" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="RoomHeigth" placeholder ="Room Height In Feet" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="RoomLength"  placeholder="Room Length In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="RoomWidth"  placeholder="Room Width In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="DoorHeight"  placeholder="Door Height In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="DoorWidth"  placeholder="Door Width In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="4.5" step="4.5" max="9" name="Roomthickness" placeholder ="Wall thickness In Inches" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="4" step="2" max="12" name="Roofthickness" placeholder ="Roof thickness In Inches" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="BathRoomCount" placeholder ="Total Number of BathRooms" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="BathRoomHeigth" placeholder ="BathRoom Height In Feet" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="BathRoomLength"  placeholder="BathRoom Length In feet" style="width:70%" required />
+                <br /><br />
+                <select name="ratio" style="width:30%" >
+                    <option value="7">cement sand ratio</option>
+                <option value="4">1:3</option>
+                <option value="5">1:4</option>
+                <option value="6">1:5</option>
+                <option value="7">1:6</option>
+                <option value="8">1:7</option>
+                </select>
+                <input type="submit" class="btn btn-success" style="width:30%" value="submit"/>
+
+            </form>
+            <b id="dv" style="color:blue;"></b>
+
+    </div>  
+    
+    <div class="col-md-5">       
+                <br /><br /><br />               
+                <input type="number" min="0" name="BathRoomWidth"  placeholder="BathRoom Width In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="BathDoorHeight"  placeholder="BathRoom Door Height In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="BathDoorWidth"  placeholder="BathRoom Door Width In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="4.5" step="4.5" max="9" name="BathRoomthickness" placeholder ="BathRoom Wall thickness In Inches" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="KitchenCount" placeholder ="Total Number of Kitchens" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="KitchenHeignt" placeholder ="Kitchen Height In Feet" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="KitchenLength" placeholder ="Kitchen Length In Feet" style="width:70%" required/>
+                <br /><br />
+                <input type="number" min="0" name="KitchenWidth"  placeholder="Kitchen Width In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="KitchenDoorHeight"  placeholder="Kitchen Door Height In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="0" name="KitchenDoorWidth"  placeholder="Kitchen Door Width In feet" style="width:70%" required />
+                <br /><br />
+                <input type="number" min="4.5" step="4.5" max="9" name="Kitchenthickness"  placeholder="Kitchen Wall thickness In Inches" style="width:70%" required />
+                <br /><br />
+            
+        <b id="dv1" style="color:blue;"></b>
+    </div>    
+    
+                
+</div>

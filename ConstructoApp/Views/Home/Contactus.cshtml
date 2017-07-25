@@ -1,0 +1,23 @@
+﻿@model List<ConstructoApp.Models.Organizer>
+@{
+    ViewBag.Title = "Contactus";
+}
+<link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+<link href="~/Scripts/bootstrap.min.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+        @{
+            foreach(var i in Model)
+            {
+                
+                <img src="@Url.Content(i.img)"/>
+                <b>Name :</b>@i.Name;
+                <br />
+                <b>Email :</b>@i.email;
+                <br />
+                  
+            }
+         }
+    </div>
+</div>

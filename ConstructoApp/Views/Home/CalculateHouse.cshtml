@@ -1,0 +1,48 @@
+﻿@model IList<ConstructoApp.Models.Materials>
+
+@{
+    ViewBag.Title = "CalculateHouse";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="rwd-table" style="margin:1em 0;min-width:600px">
+    <thead>
+      <tr style="border-top: 1px solid #ddd;border-bottom:1px solid #ddd">
+        <th style="margin-left:2%">Number of Bricks</th>
+        <th style="margin-left:4%">Total Cement Bags</th>
+        <th style="margin-left:6%">Sand In cubic Feet</th>
+        <th style="margin-left:6%">Crush</th>
+        <th style="margin-left:8%">Steel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-top: 1px solid #ddd;border-bottom:1px solid #ddd">
+          @{
+            
+           foreach(var i in Model){
+            <td data-th="Number of Bricks" style="text-align:left;padding-top:.5em"><p>@i.bricks</p></td>
+            <td data-th="Sand In cubic Feet" style="padding-top:.5em"><p>@i.cement</p></td>
+            <td data-th="Total Cement Bags" style="padding-top:.5em"><p>@i.sand</p></td>
+            <td data-th="Crush" style="padding-top:.5em"><p>@i.crush</p></td>
+            <td data-th="Steel" style="padding-top:.5em"><p>@i.steel</p></td>  
+           }
+        }
+      </tr>
+    
+    </tbody>
+  </table>
+        <input type="submit" class="btn btn-success" value="Continiue" />
+        <a href="~/Home/ManualInputs" type="submit" class="btn btn-danger">Back</a>
+    </div>
+        <div class="col-md-4"></div>
+        </div>
+</body>
+</html>
+
